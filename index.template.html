@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{{{otherData.personName}}}</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css" />
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <div id="mobile-menu-open" class="shadow-large">
+      <i class="fa fa-bars" aria-hidden="true"></i>
+    </div>
+    <!-- End #mobile-menu-toggle -->
+    <header>
+      <div id="mobile-menu-close">
+        <span>Close</span> <i class="fa fa-times" aria-hidden="true"></i>
+      </div>
+      <ul id="menu" class="shadow">
+        <li>
+          <a href="#about">About</a>
+        </li>
+        <li>
+          <a href="#experience">Experience</a>
+        </li>
+        <li>
+          <a href="#education">Education</a>
+        </li>
+        <li>
+          <a href="#projects">Projects</a>
+        </li>
+        <li>
+          <a href="#skills">Skills</a>
+        </li>
+        <li>
+          <a href="#contact">Contact</a>
+        </li>
+      </ul>
+    </header>
+    <!-- End header -->
+
+    <div id="lead">
+      <div id="lead-content">
+        <h1>{{{otherData.personName}}}</h1>
+        <h2>{{{otherData.headline}}}</h2>
+        <a href="mailto:{{{otherData.email}}}" class="btn-rounded-white"
+          >Work with Me</a
+        >
+      </div>
+      <!-- End #lead-content -->
+
+      <div id="lead-overlay"></div>
+
+      <div id="lead-down">
+        <span>
+          <i class="fa fa-chevron-down" aria-hidden="true"></i>
+        </span>
+      </div>
+      <!-- End #lead-down -->
+    </div>
+    <!-- End #lead -->
+
+    <div id="about">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <h2 class="heading">About Me</h2>
+          </div>
+          <div class="col-md-8">{{{otherData.aboutMe}}}</div>
+        </div>
+      </div>
+    </div>
+    <!-- End #about -->
+
+    <div id="experience" class="background-alt">
+      <h2 class="heading">Experience</h2>
+      <div id="experience-timeline">
+        {{#otherData.experience}}
+        <div data-date="{{period}}">
+          <h3>{{companyName}}</h3>
+          <h4>{{role}}</h4>
+          <p>{{description}}</p>
+        </div>
+        {{/otherData.experience}}
+      </div>
+    </div>
+    <!-- End #experience -->
+
+    <div id="education">
+      <h2 class="heading">Education</h2>
+      {{#otherData.education}}
+      <div class="education-block">
+        <h3>{{institution}}</h3>
+        <span class="education-date">{{period}}</span>
+        <h4>{{qualification}}</h4>
+        <p>{{description}}</p>
+      </div>
+      {{/otherData.education}}
+      <!-- End .education-block -->
+    </div>
+    <!-- End #education -->
+
+    <div id="projects" class="background-alt">
+      <h2 class="heading">Side Projects</h2>
+      <div class="container">
+        <div class="row">
+          {{#otherData.latestProjects}}
+          <div class="project shadow-large">
+            <div class="project-image">
+              <img src="{{{logoUrl}}}" />
+            </div>
+            <!-- End .project-image -->
+            <div class="project-info">
+              <h3>{{name}}</h3>
+              <p>{{description}}</p>
+              <a href="{{{url}}}">View Project</a>
+            </div>
+            <!-- End .project-info -->
+          </div>
+          {{/otherData.latestProjects}}
+          <!-- End .project -->
+        </div>
+      </div>
+    </div>
+    <!-- End #projects -->
+
+    <div id="skills">
+      <h2 class="heading">Top Skills</h2>
+      <ul>
+        {{#otherData.topSkills}}
+        <li>{{.}}</li>
+        {{/otherData.topSkills}}
+      </ul>
+    </div>
+    <!-- End #skills -->
+
+    <div id="contact">
+      <h2>Get in Touch</h2>
+      <div id="contact-form">
+        <form name="contact" method="POST" data-netlify="true">
+          <input
+            type="hidden"
+            name="_subject"
+            value="Contact request from personal website"
+          />
+          <input
+            type="email"
+            name="_replyto"
+            placeholder="Your email"
+            required
+          />
+          <textarea
+            name="message"
+            placeholder="Your message"
+            required
+          ></textarea>
+          <button type="submit">Send</button>
+        </form>
+      </div>
+      <!-- End #contact-form -->
+    </div>
+    <!-- End #contact -->
+
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-5 copyright">
+            <p>
+              Copyright &copy; {{{otherData.year}}} {{{otherData.personName}}}
+            </p>
+          </div>
+          <div class="col-sm-2 top">
+            <span id="to-top">
+              <i class="fa fa-chevron-up" aria-hidden="true"></i>
+            </span>
+          </div>
+          <div class="col-sm-5 social">
+            <ul>
+              <li>
+                <a href="{{{otherData.github}}}" target="_blank"
+                  ><i class="fa fa-github" aria-hidden="true"></i
+                ></a>
+              </li>
+              <li>
+                <a href="{{{otherData.linkedin}}}" target="_blank"
+                  ><i class="fa fa-linkedin" aria-hidden="true"></i
+                ></a>
+              </li>
+              <li>
+                <a href="{{{otherData.twitter}}}" target="_blank"
+                  ><i class="fa fa-twitter" aria-hidden="true"></i
+                ></a>
+              </li>
+              <li>
+                <a href="{{{otherData.medium}}}" target="_blank"
+                  ><i class="fa fa-medium" aria-hidden="true"></i
+                ></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- End footer -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/scripts.min.js"></script>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-analytics.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      var firebaseConfig = {
+        apiKey: "AIzaSyCEKXa-SSkGVFxOGQkSJkr_KIRJixtzwX0",
+        authDomain: "personal-portfolio-50f51.firebaseapp.com",
+        projectId: "personal-portfolio-50f51",
+        storageBucket: "personal-portfolio-50f51.appspot.com",
+        messagingSenderId: "1089554082340",
+        appId: "1:1089554082340:web:c252cb0e0b4412156286b1",
+        measurementId: "G-HPK0333XZC",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    </script>
+  </body>
+</html>
