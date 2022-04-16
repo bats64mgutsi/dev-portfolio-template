@@ -82,7 +82,7 @@ const rules = [
     alsoUses: [
       {
         database: "education",
-        fetchBlocks: false,
+        fetchBlocks: true,
         map: (page, ctx) => {
           page.otherData.institution = ObjectTransformers.transform_all(
             page.data.properties.Name.title
