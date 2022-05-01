@@ -28,7 +28,7 @@
     "gulp-sass": "^5.0.0",
     "gulp-uglify": "^3.0.2",
     "gulp-wait": "0.0.2",
-    "motionlink-cli": "^0.5.6",
+    "motionlink-cli": "^0.5.8",
     "showdown": "^1.9.1"
   }
 }
