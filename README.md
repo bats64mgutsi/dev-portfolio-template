@@ -1,6 +1,6 @@
 # Dev Portfolio Template
 
-MotionLink template for dev portfolio.
+Add more life to your CV with a clean dev portfolio website. The website is lightweight, fully responsive, and great for students. Just add your information and go. See live demo [here](https://dev-portfolio-template-motionlink.netlify.app).
 
 ## Notion Template
 
